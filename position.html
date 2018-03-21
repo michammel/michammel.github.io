@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Oh, Brother....</title>
+<style type="text/css">
+body {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 2em;
+	font-style: italic;
+	line-height: normal;
+	font-weight: bold;
+	margin:0;
+	text-transform: uppercase;
+	}
+
+#yay {
+	color: #FF0;
+	background-color: #C39;
+}
+
+#nay {
+	color: #09F;
+	background-color: #00C;
+}
+
+.kommentar {
+	font-size:xx-large;
+	font-weight:bold;
+	}
+	
+p {
+	font-size: x-small;
+	}
+	
+.smiley {
+	display:block;
+	font-style:normal;
+	font-size: 4em;
+	padding: 0 auto;
+	margin: 0;
+	}
+	
+#yay a {
+	background-color:#FF0;
+	color: #c39;
+}
+
+#nay a {
+	color: #00C;
+	background-color:#09f;
+	}
+
+a {
+	margin:0;
+	padding: 0 0.4em;
+	text-decoration:none;
+}
+
+
+</style>
+</head>
+
+<body onLoad="getLocation()" id="nay">
+
+<div id="text"></div>
+<p id="loco" class="kommentar"></p>
+<script>
+var x = document.getElementById("text");
+var o = document.getElementById("nay");
+var p = document.getElementById("loco");
+
+function getLocation() {
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(onLocation, showPosition, showError);
+} else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+}
+}
+
+function showPosition(position) {
+p.innerHTML = "Latitude: " + position.coords.latitude + 
+"<br>Longitude: " + position.coords.longitude;  
+}
+
+function onLocation(position) {
+	if (position.coords.longitude < 12.9410 && position.coords.longitude > 12.4694 && position.coords.latitude > 55.659 && position.coords.latitude < 55.76) {
+		x.innerHTML = "<p class=\"smiley\">;-)</p><p class=\"kommentar\">Det ser ud til at du er p&Aring; kontoret</p><p>Ring <a href=\"tel:40816366\">40816333</a> for at be- eller afkr&AElig;fte</p>" + "<p>Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude + "</p>";
+		o.id = "yay";
+} else {
+		x.innerHTML = "<p class=\"smiley\">:-(</p><p class=\"kommentar\">Du skulle ta og tjekke det ud på kontoret</p><p>Hvis du faktisk er p&Aring; kontoret og bruger din mobil, m&Aring; du hellere ringe <a href=\"tel:40816366\">40816333</a></p>" + "<p>Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude + "</p>";
+}
+}
+
+function showError(error) {
+switch(error.code) {
+    case error.PERMISSION_DENIED:
+        x.innerHTML = "User denied the request for Geolocation."
+        break;
+    case error.POSITION_UNAVAILABLE:
+        x.innerHTML = "Location information is unavailable."
+        break;
+    case error.TIMEOUT:
+        x.innerHTML = "The request to get user location timed out."
+        break;
+    case error.UNKNOWN_ERROR:
+        x.innerHTML = "An unknown error occurred."
+        break;
+  }
+}
+</script>
+
+</body>
+</html>
