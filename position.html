@@ -84,7 +84,6 @@ p.innerHTML = "Latitude: " + position.coords.latitude +
 }
 
 function onLocation(position) {
-	if (position.coords.longitude < 12.9410 && position.coords.longitude > 12.4694 && position.coords.latitude > 55.659 && position.coords.latitude < 55.76) {
 		x.innerHTML = "<p class=\"smiley\">;-)</p><p class=\"kommentar\">Det ser ud til at du er p&Aring; kontoret</p><p>Ring <a href=\"tel:40816366\">40816333</a> for at be- eller afkr&AElig;fte</p>" + "<p>Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude + "</p>";
 		o.id = "yay";
 } else {
