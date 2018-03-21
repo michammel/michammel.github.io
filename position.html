@@ -6,11 +6,13 @@
 <style type="text/css">
 body {
 	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 3em;
 	font-style: italic;
 	line-height: normal;
 	font-weight: bold;
 	margin:0;
 	text-transform: uppercase;
+	line-height:1.2;
 	}
 
 #yay {
@@ -24,15 +26,18 @@ body {
 }
 
 .kommentar {
+	font-size:200%;
 	font-weight:bold;
 	}
 	
 p {
+	font-size: 120%;
 	}
 	
 .smiley {
 	display:block;
 	font-style:normal;
+	font-size: 800%;
 	padding: 0 auto;
 	margin: 0;
 	}
@@ -58,6 +63,7 @@ a {
 </head>
 
 <body onLoad="getLocation()" id="nay">
+<p class="kommentar">Hej Claus,</p>
 <div id="text"></div>
 <p id="loco" class="kommentar"></p>
 <script>
