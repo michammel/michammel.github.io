@@ -93,13 +93,10 @@ p.innerHTML = "Latitude: " + position.coords.latitude +
 
 function onLocation(position) {
 	if (position.coords.longitude < 12.637492 && position.coords.longitude > 12.637109 && position.coords.latitude > 55.596433 && position.coords.latitude < 55.597255) {
-<<<<<<< HEAD
 		x.innerHTML = "<p class=\"smiley\">;-)</p><p class=\"kommentar\">Det ser ud til at du er p&Aring; kontoret</p><p>Ring <a href=\"tel:40816366\">40816333</a> for at be- eller afkr&AElig;fte</p>" + "<p class=\"sted\">Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude + "</p>";
 		o.id = "yay";
 } else {
-		x.innerHTML = "<p class=\"smiley\">:-(</p><p class=\"kommentar\">Du skulle ta og tjekke det ud på kontoret</p><p>Hvis du faktisk er p&Aring; kontoret og bruger din mobil, m&Aring; du hellere ringe <a href=\"tel:40816366\">40816333</a></p>" + "<p class=\"sted”>Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude + "</p>";
-=======
->>>>>>> 9d0e75f22e39742de04f5daf60092d0b028a13d8
+		x.innerHTML = "<p class=\"smiley\">:-(</p><p class=\"kommentar\">Du skulle ta og tjekke det ud på kontoret</p><p>Hvis du faktisk er p&Aring; kontoret og bruger din mobil, m&Aring; du hellere ringe <a href=\"tel:40816366\">til mig</a></p>" + "<p class=\"sted\">Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude + "</p>";
 }
 }
 
